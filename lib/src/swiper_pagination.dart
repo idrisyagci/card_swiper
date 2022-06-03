@@ -53,19 +53,29 @@ class FractionPaginationBuilder extends SwiperPlugin {
         ],
       );
     } else {
-      return Row(
-        key: key,
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-          Text(
-            '${config.activeIndex + 1}',
-            style: TextStyle(color: activeColor, fontSize: activeFontSize),
-          ),
-          Text(
-            ' / ${config.itemCount}',
-            style: TextStyle(color: color, fontSize: fontSize),
-          )
-        ],
+      return Container(
+        padding: EdgeInsets.symmetric(horizontal: 15, vertical: 5.0),
+        decoration: BoxDecoration(
+            color: Colors.black,
+            borderRadius: BorderRadius.circular(15),
+            border: Border.all(color: Color(0xff222222))
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          key: key,
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Text(
+              '${config.activeIndex + 1}',
+              style: TextStyle(color: activeColor, fontSize: activeFontSize, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              ' / ${config.itemCount}',
+              style: TextStyle(color: color, fontSize: fontSize, fontWeight: FontWeight.bold),
+            )
+          ],
+        ),
       );
     }
   }
